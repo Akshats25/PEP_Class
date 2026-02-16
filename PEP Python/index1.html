@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>26 January – Republic Day of India</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+        --saffron: #FF9933;
+        --white: #ffffff;
+        --green: #138808;
+        --blue: #000080;
+        --light-bg: #f7f7f7;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: var(--light-bg);
+        color: #222;
+    }
+
+    header {
+        background: linear-gradient(
+            to bottom,
+            var(--saffron),
+            var(--white),
+            var(--green)
+        );
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: var(--blue);
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    /* Ashoka Chakra */
+    .chakra {
+        width: 120px;
+        height: 120px;
+        border: 6px solid var(--blue);
+        border-radius: 50%;
+        margin: 30px auto 0;
+        position: relative;
+        animation: spin 10s linear infinite;
+    }
+
+    .chakra::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: var(--blue);
+        transform: translate(-50%, -50%);
+    }
+
+    .chakra::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 4px;
+        background: var(--blue);
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    section {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    section h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: var(--blue);
+        margin-bottom: 30px;
+    }
+
+    .info {
+        text-align: center;
+        font-size: 1.05rem;
+        max-width: 800px;
+        margin: auto;
+        line-height: 1.7;
+    }
+
+    /* Timeline */
+    .timeline {
+        display: grid;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .event {
+        background: white;
+        border-left: 6px solid var(--saffron);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+
+    .event:hover {
+        transform: translateX(8px);
+        border-left-color: var(--green);
+    }
+
+    .event h3 {
+        color: var(--blue);
+        margin-bottom: 5px;
+    }
+
+    /* Rights Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        background: linear-gradient(135deg, #fff, #f0f0f0);
+    }
+
+    .card h3 {
+        color: var(--green);
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+        opacity: 0.85;
+    }
+
+    /* Quiz */
+    .quiz {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    button {
+        background: var(--blue);
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s;
+    }
+
+    button:hover {
+        background: var(--green);
+        transform: scale(1.05);
+    }
+
+    footer {
+        background: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>26 January – Republic Day 🇮🇳</h1>
+    <p>
+        A day that marks the adoption of the Indian Constitution and the birth of the
+        world’s largest democracy.
+    </p>
+    <div class="chakra"></div>
+</header>
+
+<section>
+    <h2>Why Republic Day Matters</h2>
+    <p class="info">
+        On 26 January 1950, India became a sovereign republic when the Constitution
+        of India came into effect. This day symbolizes justice, liberty, equality,
+        and fraternity — the core values that guide our nation.
+    </p>
+</section>
+
+<section>
+    <h2>Historical Timeline</h2>
+    <div class="timeline">
+        <div class="event">
+            <h3>15 August 1947</h3>
+            <p>India gained independence from British rule.</p>
+        </div>
+        <div class="event">
+            <h3>29 August 1947</h3>
+            <p>Drafting Committee of the Constitution was formed.</p>
+        </div>
+        <div class="event">
+            <h3>26 November 1949</h3>
+            <p>The Constitution of India was adopted.</p>
+        </div>
+        <div class="event">
+            <h3>26 January 1950</h3>
+            <p>India became a Republic.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Fundamental Rights</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Right to Equality</h3>
+            <p>Ensures equality before law and equal protection.</p>
+        </div>
+        <div class="card">
+            <h3>Right to Freedom</h3>
+            <p>Includes freedom of speech, expression, and movement.</p>
+        </div>
+        <div class="card">
+            <h3>Right Against Exploitation</h3>
+            <p>Prohibits human trafficking and forced labor.</p>
+        </div>
+        <div class="card">
+            <h3>Right to Constitutional Remedies</h3>
+            <p>Protects citizens by enforcing their rights.</p>
+        </div>
+    </div>
+</section>
+
+<section class="quiz">
+    <h2>Test Your Knowledge</h2>
+    <p id="quizQuestion">
+        When did the Constitution of India come into effect?
+    </p>
+    <button onclick="showAnswer()">Show Answer</button>
+    <p id="answer" style="display:none; margin-top:15px; font-weight:600;">
+        26 January 1950 🇮🇳
+    </p>
+</section>
+
+<footer>
+    Jai Hind | Celebrating Democracy & Unity of India
+</footer>
+
+<script>
+    function showAnswer() {
+        document.getElementById("answer").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+package/__init__.py
+package/main.py
+package/removespace.py
+package/saint.py
+string_manipulater_akshat2011.egg-info/PKG-INFO
+string_manipulater_akshat2011.egg-info/SOURCES.txt
+string_manipulater_akshat2011.egg-info/dependency_links.txt
+string_manipulater_akshat2011.egg-info/top_level.txt

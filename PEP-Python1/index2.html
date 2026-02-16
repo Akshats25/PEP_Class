@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine's Week 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+        --pink: #ff4d6d;
+        --dark-pink: #c9184a;
+        --bg: linear-gradient(135deg, #ff758f, #ffb3c6);
+        --white: #ffffff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: var(--bg);
+        overflow: hidden;
+        color: var(--white);
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 10px;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .countdown {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .time-box {
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
+        padding: 15px 20px;
+        border-radius: 15px;
+        min-width: 90px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .time-box span {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .time-box small {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+
+    button {
+        background: var(--white);
+        color: var(--dark-pink);
+        border: none;
+        padding: 15px 35px;
+        font-size: 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    button:hover {
+        transform: translateY(-5px) scale(1.05);
+        background: #ffe5ec;
+    }
+
+    .love-message {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+
+    .love-message.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Floating Hearts */
+    .heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 20px;
+        animation: floatUp linear forwards;
+        opacity: 0.8;
+        pointer-events: none;
+    }
+
+    @keyframes floatUp {
+        from {
+            transform: translateY(0) scale(1);
+            opacity: 0.9;
+        }
+        to {
+            transform: translateY(-120vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 15px;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Valentine’s Week 💕</h1>
+    <p>
+        A week full of love, surprises, and beautiful moments.
+        Celebrate each day with someone who makes your heart smile.
+    </p>
+
+    <div class="countdown">
+        <div class="time-box">
+            <span id="days">0</span>
+            <small>Days</small>
+        </div>
+        <div class="time-box">
+            <span id="hours">0</span>
+            <small>Hours</small>
+        </div>
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <small>Minutes</small>
+        </div>
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+
+    <button onclick="showLove()">Reveal Love Message 💖</button>
+
+    <div class="love-message" id="loveMessage">
+        You are the reason ordinary moments feel magical ❤️
+    </div>
+
+    <footer>Made with love for Valentine’s Week</footer>
+</div>
+
+<script>
+    /* Countdown Timer */
+    const valentinesDate = new Date("Feb 14, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = valentinesDate - now;
+
+        if (diff <= 0) return;
+
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+        document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+    }, 1000);
+
+    /* Love Message */
+    function showLove() {
+        document.getElementById("loveMessage").classList.add("show");
+    }
+
+    /* Floating Hearts Generator */
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        heart.style.fontSize = (16 + Math.random() * 24) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+
+    setInterval(createHeart, 0.001);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

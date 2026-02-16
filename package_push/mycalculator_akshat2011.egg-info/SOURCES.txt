@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+mycalculator_akshat2011.egg-info/PKG-INFO
+mycalculator_akshat2011.egg-info/SOURCES.txt
+mycalculator_akshat2011.egg-info/dependency_links.txt
+mycalculator_akshat2011.egg-info/top_level.txt
+mycustompackage/__init__.py
+mycustompackage/help.py
+mycustompackage/power.py
+mycustompackage/simple_math.py
